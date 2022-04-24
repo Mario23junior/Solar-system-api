@@ -75,5 +75,15 @@ public class ServiceJupiter {
 		}
 	}
 	
+	public ResponseEntity<JupiterDTO> delete(Long id) {
+		Optional<Jupiter> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
 	
 }

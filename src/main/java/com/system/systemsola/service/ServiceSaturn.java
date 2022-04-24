@@ -1,5 +1,7 @@
 package com.system.systemsola.service;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,4 +43,35 @@ public class ServiceSaturn {
 		}
 	}
 	
+	public ResponseEntity<SaturnDTO> listId(Long id) {
+		Optional<Saturn> idPla = repository.findById(id);
+		if(idPla.isPresent()) {
+			return ResponseEntity.ok(mapper.map(idPla.get(), SaturnDTO.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
+
+	public ResponseEntity<SaturnDTO> update(Long id, SaturnDTO saturnDTO) {
+		Optional<Saturn> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Saturn dataMer = dataMercu.get();
+			dataMer.setName(saturnDTO.getName());
+			dataMer.setDistanceSun(saturnDTO.getDistanceSun());
+			dataMer.setSurfaceArea(saturnDTO.getSurfaceArea());
+			dataMer.setGravity(saturnDTO.getGravity());
+			dataMer.setRadius(saturnDTO.getRadius());
+			dataMer.setOrbitalPeriod(saturnDTO.getOrbitalPeriod());
+			dataMer.setMoons(saturnDTO.getMoons());
+			dataMer.setQtmoons(saturnDTO.getQtmoons());
+			dataMer.setTemMedia(saturnDTO.getTemMedia());
+			dataMer.setTemMaxima(saturnDTO.getTemMaxima());
+			dataMer.setTemMinima(saturnDTO.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, SaturnDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
 }

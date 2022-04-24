@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.system.systemsola.Exceptions.ReturnErroFindSearchNotFound;
 import com.system.systemsola.dto.SystemSolarDTO;
 import com.system.systemsola.model.SystemSolar;
 import com.system.systemsola.repository.RepositorySystemSolar;
@@ -22,7 +23,7 @@ public class ServiceSolarSystem {
 	}
 
 	public ResponseEntity<SystemSolarDTO> saveBody(SystemSolarDTO solaSystemDto) {
-		//ValueBeDuplicate(solaSystemDto);
+		ValidValueDuplicate(solaSystemDto);
 		SystemSolar body = bodySave(mapper.map(solaSystemDto, SystemSolar.class));
 		return ResponseEntity
 				  .status(HttpStatus.OK)
@@ -31,5 +32,13 @@ public class ServiceSolarSystem {
 
 	private SystemSolar bodySave(SystemSolar systemSolar) {
  		return repoSystemSol.save(systemSolar);
+	}
+	
+	public void ValidValueDuplicate(SystemSolarDTO solaSystemDto) {
+		SystemSolar dtoPlane = mapper.map(solaSystemDto, SystemSolar.class);
+		SystemSolar systemFind = repoSystemSol.findByName(solaSystemDto.getName());
+		if(systemFind != null && systemFind.getId() != dtoPlane.getId()) {
+			throw new ReturnErroFindSearchNotFound("Informação "+ systemFind.getName()+" Já esta cadastrada");
+		}
 	}
 }

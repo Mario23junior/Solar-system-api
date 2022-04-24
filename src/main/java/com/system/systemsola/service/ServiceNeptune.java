@@ -53,21 +53,31 @@ public class ServiceNeptune {
 		}
 	}
 	
+
+	public ResponseEntity<NeptuneDTO> update(Long id, NeptuneDTO neptuneDTO) {
+		Optional<Neptune> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Neptune dataMer = dataMercu.get();
+			dataMer.setName(neptuneDTO.getName());
+			dataMer.setDistanceSun(neptuneDTO.getDistanceSun());
+			dataMer.setSurfaceArea(neptuneDTO.getSurfaceArea());
+			dataMer.setGravity(neptuneDTO.getGravity());
+			dataMer.setRadius(neptuneDTO.getRadius());
+			dataMer.setOrbitalPeriod(neptuneDTO.getOrbitalPeriod());
+			dataMer.setMoons(neptuneDTO.getMoons());
+			dataMer.setQtmoons(neptuneDTO.getQtmoons());
+			dataMer.setTemMedia(neptuneDTO.getTemMedia());
+			dataMer.setTemMaxima(neptuneDTO.getTemMaxima());
+			dataMer.setTemMinima(neptuneDTO.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, NeptuneDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+ 
 	
 	
 

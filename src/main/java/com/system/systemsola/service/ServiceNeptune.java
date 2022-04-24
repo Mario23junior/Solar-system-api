@@ -75,9 +75,16 @@ public class ServiceNeptune {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
 		}
 	}
-	
-	
- 
+
+	public ResponseEntity<NeptuneDTO> delete(Long id) {
+		Optional<Neptune> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
 	
 	
 

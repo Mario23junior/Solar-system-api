@@ -6,4 +6,6 @@ import com.system.systemsola.model.Saturn;
 
 public interface RepositorySaturn extends JpaRepository<Saturn, Long>{
 
+	Saturn findByName(String name);
+
 }

@@ -1,8 +1,5 @@
 package com.system.systemsola.dto;
 
-import javax.persistence.Entity;
-
-@Entity
 public class MercuryDTO {
 
 	private String name;

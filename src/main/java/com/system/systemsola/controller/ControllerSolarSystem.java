@@ -1,6 +1,7 @@
 package com.system.systemsola.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,5 +37,10 @@ public class ControllerSolarSystem {
 	@PutMapping("{id}")
 	public ResponseEntity<SystemSolarDTO> update(@PathVariable Long id, @RequestBody SystemSolarDTO systemSolarDTO) {
 		return service.update(id, systemSolarDTO);
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<SystemSolarDTO> delete(@PathVariable Long id) {
+		return service.delete(id);
 	}
 }

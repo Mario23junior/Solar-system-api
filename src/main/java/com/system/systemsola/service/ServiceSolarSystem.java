@@ -68,34 +68,18 @@ public class ServiceSolarSystem {
 			repoSystemSol.save(systemUpdate);
 			return ResponseEntity.ok(mapper.map(systemUpdate, SystemSolarDTO.class));
 		}else {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-
-
-			
-
-
-
-			
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
 		}
 	}
 	
-	
+
+	public ResponseEntity<SystemSolarDTO> delete(Long id) {
+		Optional<SystemSolar> findId = repoSystemSol.findById(id);
+		if(findId.isPresent()) {
+			repoSystemSol.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

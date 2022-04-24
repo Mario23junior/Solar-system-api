@@ -44,13 +44,58 @@ public class ServiceSolarSystem {
 		}
 	}
 	
-	public ResponseEntity<SystemSolar> listId(Long id) {
+	public ResponseEntity<SystemSolarDTO> listId(Long id) {
 		Optional<SystemSolar> idPla = repoSystemSol.findById(id);
 		if(idPla.isPresent()) {
-			return ResponseEntity.ok(mapper.map(idPla.get(), SystemSolar.class));
+			return ResponseEntity.ok(mapper.map(idPla.get(), SystemSolarDTO.class));
 		} else {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
 	
+	public ResponseEntity<SystemSolarDTO> update(Long id, SystemSolarDTO systemSolarDTO) {
+		Optional<SystemSolar> update = repoSystemSol.findById(id);
+		if(update.isPresent()) {
+			SystemSolar systemUpdate = update.get();
+			systemUpdate.setName(systemSolarDTO.getName());
+			systemUpdate.setIdade(systemSolarDTO.getIdade());
+			systemUpdate.setLocation(systemSolarDTO.getLocation());
+			systemUpdate.setMass(systemSolarDTO.getMass());
+			systemUpdate.setNearestStar(systemSolarDTO.getNearestStar());
+			systemUpdate.setSemiEixo(systemSolarDTO.getSemiEixo());
+			systemUpdate.setDistanceKuiperCliff(systemSolarDTO.getDistanceKuiperCliff());
+			systemUpdate.setObject(systemSolarDTO.getObject());
+			repoSystemSol.save(systemUpdate);
+			return ResponseEntity.ok(mapper.map(systemUpdate, SystemSolarDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+
+
+			
+
+
+
+			
+		}
+	}
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

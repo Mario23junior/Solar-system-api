@@ -1,6 +1,7 @@
 package com.system.systemsola.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,6 +36,11 @@ public class ControllerMercury {
 	@PutMapping("{id}")
 	public ResponseEntity<MercuryDTO> update(@PathVariable Long id, @RequestBody MercuryDTO mercuryDto){
 		return service.update(id, mercuryDto);
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<MercuryDTO> delete(@PathVariable Long id) {
+		return service.delete(id);
 	}
 	
 }

@@ -77,20 +77,13 @@ private RepositoryMercury repository;
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+	public ResponseEntity<MercuryDTO> delete(Long id) {
+		Optional<Mercury> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
 }

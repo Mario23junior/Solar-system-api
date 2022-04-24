@@ -1,6 +1,7 @@
 package com.system.systemsola.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,8 +34,13 @@ public class ControllerMars {
 	}
 	
 	@PutMapping("{id}")
-	public ResponseEntity<MarsDTO> lists(@PathVariable Long id, @RequestBody MarsDTO marsDto) {
+	public ResponseEntity<MarsDTO> update(@PathVariable Long id, @RequestBody MarsDTO marsDto) {
 		return service.update(id, marsDto);
+	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<MarsDTO> delete(@PathVariable Long id) {
+		return service.delete(id);
 	}
 
 }

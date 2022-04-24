@@ -75,6 +75,17 @@ public class ServiceMars {
 		}
 	}
 	
+	
+	public ResponseEntity<MarsDTO> delete(Long id) {
+		Optional<Mars> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
 }
 
 

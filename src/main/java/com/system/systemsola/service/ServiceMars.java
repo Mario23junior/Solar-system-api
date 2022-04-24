@@ -53,5 +53,49 @@ public class ServiceMars {
 		}
 	}
 	
+	public ResponseEntity<MarsDTO> update(Long id, MarsDTO MarsDto) {
+		Optional<Mars> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Mars dataMer = dataMercu.get();
+			dataMer.setName(MarsDto.getName());
+			dataMer.setDistanceSun(MarsDto.getDistanceSun());
+			dataMer.setSurfaceArea(MarsDto.getSurfaceArea());
+			dataMer.setGravity(MarsDto.getGravity());
+			dataMer.setRadius(MarsDto.getRadius());
+			dataMer.setOrbitalPeriod(MarsDto.getOrbitalPeriod());
+			dataMer.setMoons(MarsDto.getMoons());
+			dataMer.setQtmoons(MarsDto.getQtmoons());
+			dataMer.setTemMedia(MarsDto.getTemMedia());
+			dataMer.setTemMaxima(MarsDto.getTemMaxima());
+			dataMer.setTemMinima(MarsDto.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, MarsDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

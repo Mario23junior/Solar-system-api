@@ -1,5 +1,7 @@
 package com.system.systemsola.service;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +40,16 @@ public class ServiceJupiter {
 		Jupiter systemFind = repository.findByName(jupiterDto.getName());
 		if(systemFind != null && systemFind.getId() != dtoPlane.getId()) {
 			throw new ReturnErroFindSearchNotFound("Planeta "+ systemFind.getName()+" Já esta cadastrado");
+		}
+	}
+	
+	
+	public ResponseEntity<JupiterDTO> listId(Long id) {
+		Optional<Jupiter> idPla = repository.findById(id);
+		if(idPla.isPresent()) {
+			return ResponseEntity.ok(mapper.map(idPla.get(), JupiterDTO.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
 	

@@ -53,6 +53,29 @@ private RepositoryMercury repository;
 		}
 	}
 	
+
+	public ResponseEntity<MercuryDTO> update(Long id, MercuryDTO mercuryDto) {
+		Optional<Mercury> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Mercury dataMer = dataMercu.get();
+			dataMer.setName(mercuryDto.getName());
+			dataMer.setDistanceSun(mercuryDto.getDistanceSun());
+			dataMer.setSurfaceArea(mercuryDto.getSurfaceArea());
+			dataMer.setGravity(mercuryDto.getGravity());
+			dataMer.setRadius(mercuryDto.getRadius());
+			dataMer.setOrbitalPeriod(mercuryDto.getOrbitalPeriod());
+			dataMer.setMoons(mercuryDto.getMoons());
+			dataMer.setQtmoons(mercuryDto.getQtmoons());
+			dataMer.setTemMedia(mercuryDto.getTemMedia());
+			dataMer.setTemMaxima(mercuryDto.getTemMaxima());
+			dataMer.setTemMinima(mercuryDto.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, MercuryDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
+	
 	
 	
 	

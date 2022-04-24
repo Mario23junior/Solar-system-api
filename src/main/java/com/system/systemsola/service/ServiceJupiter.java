@@ -53,4 +53,27 @@ public class ServiceJupiter {
 		}
 	}
 	
+	public ResponseEntity<JupiterDTO> update(Long id, JupiterDTO jupiterDto) {
+		Optional<Jupiter> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Jupiter dataMer = dataMercu.get();
+			dataMer.setName(jupiterDto.getName());
+			dataMer.setDistanceSun(jupiterDto.getDistanceSun());
+			dataMer.setSurfaceArea(jupiterDto.getSurfaceArea());
+			dataMer.setGravity(jupiterDto.getGravity());
+			dataMer.setRadius(jupiterDto.getRadius());
+			dataMer.setOrbitalPeriod(jupiterDto.getOrbitalPeriod());
+			dataMer.setMoons(jupiterDto.getMoons());
+			dataMer.setQtmoons(jupiterDto.getQtmoons());
+			dataMer.setTemMedia(jupiterDto.getTemMedia());
+			dataMer.setTemMaxima(jupiterDto.getTemMaxima());
+			dataMer.setTemMinima(jupiterDto.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, JupiterDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
+	
+	
 }

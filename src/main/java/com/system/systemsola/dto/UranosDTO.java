@@ -1,7 +1,5 @@
 package com.system.systemsola.dto;
 
-import javax.persistence.ManyToOne;
-
 public class UranosDTO {
 
 	private String name;
@@ -15,26 +13,20 @@ public class UranosDTO {
 	private Double temMedia;
 	private Double temMinima;
 	private Double temMaxima;
-	
-	@ManyToOne
-	private SystemSolarDTO systemSolarDto;
+
+	private SystemSolarDTO systemSolarDTO;
 
 	public UranosDTO() {
 		// TODO Auto-generated constructor stub
 	}
-	
 
-	public SystemSolarDTO getSystemSolarDto() {
-		return systemSolarDto;
+	public SystemSolarDTO getSystemSolarDTO() {
+		return systemSolarDTO;
 	}
 
-
-
-	public void setSystemSolarDto(SystemSolarDTO systemSolarDto) {
-		this.systemSolarDto = systemSolarDto;
+	public void setSystemSolarDTO(SystemSolarDTO systemSolarDTO) {
+		this.systemSolarDTO = systemSolarDTO;
 	}
-
-
 
 	public String getName() {
 		return name;

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.system.systemsola.dto.SystemSolarDTO;
+import com.system.systemsola.model.SystemSolar;
 import com.system.systemsola.service.ServiceSolarSystem;
 
 @RestController
@@ -25,7 +26,7 @@ public class ControllerSolarSystem {
 	}
 
 	@PostMapping
-	public ResponseEntity<SystemSolarDTO> save(@RequestBody SystemSolarDTO systemSolarDto) {
+	public ResponseEntity<SystemSolar> save(@RequestBody SystemSolarDTO systemSolarDto) {
 		return service.saveBody(systemSolarDto);
 	}
 	

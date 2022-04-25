@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 public class SystemSolar {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String Object;

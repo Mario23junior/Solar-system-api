@@ -2,9 +2,6 @@ package com.system.systemsola.dto;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-
 public class SystemSolarDTO {
 
 	private String name;
@@ -16,28 +13,20 @@ public class SystemSolarDTO {
 	private String semiEixo;
 	private String distanceKuiperCliff;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<UranosDTO> uranosDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<VenusDTO> venusDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<NeptuneDTO> neptunesDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<SaturnDTO> saturnsDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<MercuryDTO> mercuriyDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<MarsDTO> marsDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<JupiterDTO> jupiterDTO;
 	
-	@OneToMany(mappedBy = "systemSolarDTO", cascade = CascadeType.ALL)
 	private List<EarthDTO> earthDTO;
 
 	public SystemSolarDTO() {

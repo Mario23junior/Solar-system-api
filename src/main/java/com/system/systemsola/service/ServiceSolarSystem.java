@@ -24,12 +24,12 @@ public class ServiceSolarSystem {
 		this.mapper = mapper;
 	}
 
-	public ResponseEntity<SystemSolarDTO> saveBody(SystemSolarDTO solaSystemDto) {
+	public ResponseEntity<SystemSolar> saveBody(SystemSolarDTO solaSystemDto) {
 		ValidValueDuplicate(solaSystemDto);
 		SystemSolar body = bodySave(mapper.map(solaSystemDto, SystemSolar.class));
 		return ResponseEntity
 				  .status(HttpStatus.OK)
-				  .body(mapper.map(body, SystemSolarDTO.class));
+				  .body(mapper.map(body, SystemSolar.class));
 	}
 
 	private SystemSolar bodySave(SystemSolar systemSolar) {

@@ -13,41 +13,38 @@ import com.system.systemsola.repository.RepositorySystemSolar;
 
 @Service
 public class ServiceListAllData {
-  
+
 	private RepositorySystemSolar repository;
 	private ModelMapper mapper;
-	
+
 	public ServiceListAllData(RepositorySystemSolar repository, ModelMapper mapper) {
 		super();
 		this.repository = repository;
 		this.mapper = mapper;
 	}
-	
-	public List<SystemSolarDTO> listAllDataPlanetary() {
+
+
+	public List<SystemSolarDTO> listByDataSystemSolar() {
 		return ((List<SystemSolar>) repository
 				.findAll())
 				.stream()
-				.map(this::ConvertEntityDataDto)
+				.map(this::ConverterEntityToDTO)
 				.collect(Collectors.toList());
 	}
 
-	public SystemSolarDTO ConvertEntityDataDto(SystemSolar systemSolar) {
+	public SystemSolarDTO ConverterEntityToDTO(SystemSolar systemSolar) {
 		mapper.getConfiguration()
 		.setMatchingStrategy(MatchingStrategies.LOOSE);
-		
-		SystemSolarDTO systemSolarDto = mapper.map(systemSolar, SystemSolarDTO.class);
-		return systemSolarDto;
+		SystemSolarDTO solarDTO = mapper
+				.map(systemSolar, SystemSolarDTO.class);
+		return solarDTO;
 	}
-  
-	
+
 	public List<SystemSolarDTO> listAllData() {
-		List<SystemSolarDTO> list = listAllDataPlanetary();
+		List<SystemSolarDTO> list = listByDataSystemSolar();
 		return list
 				.stream()
 				.collect(Collectors.toList());
 	}
-	
-	
-	
-	
+
 }

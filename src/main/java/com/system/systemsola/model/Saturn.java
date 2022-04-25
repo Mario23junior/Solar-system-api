@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 public class Saturn {
    
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private Double distanceSun;

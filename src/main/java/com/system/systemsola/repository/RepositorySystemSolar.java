@@ -9,5 +9,4 @@ import com.system.systemsola.model.SystemSolar;
 public interface RepositorySystemSolar extends JpaRepository<SystemSolar, Long>{
 
 	SystemSolar findByName(String name);
-
 }

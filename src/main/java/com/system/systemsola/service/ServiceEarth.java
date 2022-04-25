@@ -53,4 +53,37 @@ public class ServiceEarth {
 		}
 	}
 	
+	public ResponseEntity<EarthDTO> update(Long id, EarthDTO earthDto) {
+		Optional<Earth> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Earth dataMer = dataMercu.get();
+			dataMer.setName(earthDto.getName());
+			dataMer.setDistanceSun(earthDto.getDistanceSun());
+			dataMer.setSurfaceArea(earthDto.getSurfaceArea());
+			dataMer.setGravity(earthDto.getGravity());
+			dataMer.setRadius(earthDto.getRadius());
+			dataMer.setOrbitalPeriod(earthDto.getOrbitalPeriod());
+			dataMer.setMoons(earthDto.getMoons());
+			dataMer.setQtmoons(earthDto.getQtmoons());
+			dataMer.setTemMedia(earthDto.getTemMedia());
+			dataMer.setTemMaxima(earthDto.getTemMaxima());
+			dataMer.setTemMinima(earthDto.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, EarthDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
+	
+	
+	public ResponseEntity<EarthDTO> delete(Long id) {
+		Optional<Earth> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
 }

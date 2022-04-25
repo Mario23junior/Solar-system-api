@@ -1,4 +1,4 @@
-<p align="center"><img src="img/icon.gif" width = "833px" height="433px"></p>
+<p align="center"><img src="logo/logo.gif" width = "833px" height="433px"></p>
 
 <h1 align="center">System Solar API</h1>
 

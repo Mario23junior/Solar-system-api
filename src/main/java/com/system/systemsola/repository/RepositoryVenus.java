@@ -6,4 +6,6 @@ import com.system.systemsola.model.Venus;
 
 public interface RepositoryVenus extends JpaRepository<Venus, Long>{
 
+	Venus findByName(String name);
+
 }

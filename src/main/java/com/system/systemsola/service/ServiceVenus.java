@@ -54,4 +54,36 @@ public class ServiceVenus {
 		}
 	}
 	
+	public ResponseEntity<VenusDTO> update(Long id, VenusDTO venusDto) {
+		Optional<Venus> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Venus dataMer = dataMercu.get();
+			dataMer.setName(venusDto.getName());
+			dataMer.setDistanceSun(venusDto.getDistanceSun());
+			dataMer.setSurfaceArea(venusDto.getSurfaceArea());
+			dataMer.setGravity(venusDto.getGravity());
+			dataMer.setRadius(venusDto.getRadius());
+			dataMer.setOrbitalPeriod(venusDto.getOrbitalPeriod());
+			dataMer.setMoons(venusDto.getMoons());
+			dataMer.setQtmoons(venusDto.getQtmoons());
+			dataMer.setTemMedia(venusDto.getTemMedia());
+			dataMer.setTemMaxima(venusDto.getTemMaxima());
+			dataMer.setTemMinima(venusDto.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, VenusDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
+	
+	public ResponseEntity<VenusDTO> delete(Long id) {
+		Optional<Venus> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
 }

@@ -54,4 +54,37 @@ public class ServiceUranus {
 		}
 	}
 	
+	public ResponseEntity<UranosDTO> update(Long id, UranosDTO uranosDRO) {
+		Optional<Uranos> dataMercu = repository.findById(id);
+		if(dataMercu.isPresent()) {
+			Uranos dataMer = dataMercu.get();
+			dataMer.setName(uranosDRO.getName());
+			dataMer.setDistanceSun(uranosDRO.getDistanceSun());
+			dataMer.setSurfaceArea(uranosDRO.getSurfaceArea());
+			dataMer.setGravity(uranosDRO.getGravity());
+			dataMer.setRadius(uranosDRO.getRadius());
+			dataMer.setOrbitalPeriod(uranosDRO.getOrbitalPeriod());
+			dataMer.setMoons(uranosDRO.getMoons());
+			dataMer.setQtmoons(uranosDRO.getQtmoons());
+			dataMer.setTemMedia(uranosDRO.getTemMedia());
+			dataMer.setTemMaxima(uranosDRO.getTemMaxima());
+			dataMer.setTemMinima(uranosDRO.getTemMinima());
+			repository.save(dataMer);
+			return ResponseEntity.ok(mapper.map(dataMer, UranosDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);			
+		}
+	}
+	
+	
+	public ResponseEntity<UranosDTO> delete(Long id) {
+		Optional<Uranos> findId = repository.findById(id);
+		if(findId.isPresent()) {
+			repository.delete(findId.get());
+			return new ResponseEntity<>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
 }

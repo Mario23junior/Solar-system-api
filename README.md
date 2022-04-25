@@ -37,7 +37,7 @@ java -jar target/systemsola-0.0.1-SNAPSHOT.jar
 ## Uso
 
 ```
-localhost:8080/localhost:8080/api/v1/planetary/planetal/
+localhost:8080/api/v1/planetary/planetal/
 ```
 
 ## Resultado dos dados da API

@@ -1,0 +1,1035 @@
+{
+	"info": {
+		"_postman_id": "30e56600-62d7-42ba-8a7a-6d69a34c8307",
+		"name": "System Solar project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sysem solar",
+			"item": [
+				{
+					"name": "Salvando dados do system solar no banco",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sun\",\n    \"object\": \"star\",\n    \"idade\": 4.568,\n    \"location\": \"Local Interstellar Cloud, Local Bubble, Orion–Cygnus Arm, Milky Way\",\n    \"mass\": 1.0014,\n    \"nearestStar\": \"Proxima Centauri,Alpha Centauri\",\n    \"semiEixo\": \"30,10 AU\",\n    \"distanceKuiperCliff\": \"50U\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/systemsolar/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"systemsolar",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/systemsolar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"systemsolar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"Sun teste\",\n    \"idade\": 4.568,\n    \"location\": \"Local Interstellar Cloud, Local Bubble, Orion–Cygnus Arm, Milky Way\",\n    \"mass\": 1.0014,\n    \"nearestStar\": \"Proxima Centauri,Alpha Centauri\",\n    \"semiEixo\": \"30,10 AU\",\n    \"distanceKuiperCliff\": \"50U\",\n    \"object\": \"star\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/systemsolar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"systemsolar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações do systema sola por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/systemsolar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"systemsolar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mercury",
+			"item": [
+				{
+					"name": "Salvando dados do planeta mercurio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mercury\",\n    \"distanceSun\": 57.910000,\n    \"surfaceArea\": 74.800000,\n    \"gravity\": \"3.7 m/s²\",\n    \"radius\": 2.4397,\n    \"orbitalPeriod\": 115.88,\n    \"moons\": false,\n    \"qtmoons\": 0,\n    \"temMedia\": 166.85,\n    \"temMinima\": -183.15,\n    \"temMaxima\": 426.85\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mercury/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mercury",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados de mercurio por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mercury/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mercury",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados do planeta mercury",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mercury teste\",\n    \"distanceSun\": 57.910000,\n    \"surfaceArea\": 74.800000,\n    \"gravity\": \"3.7 m/s²\",\n    \"radius\": 2.4397,\n    \"orbitalPeriod\": 115.88,\n    \"moons\": false,\n    \"qtmoons\": 0,\n    \"temMedia\": 166.85,\n    \"temMinima\": -183.15,\n    \"temMaxima\": 426.85\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mercury/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mercury",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados de mercurio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mercury/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mercury",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Neptune",
+			"item": [
+				{
+					"name": "Salvando dados no planeta neturno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Neptune\",\n    \"distanceSun\": 4.498396441,\n    \"surfaceArea\": 7618000000,\n    \"gravity\": \"11,15 m/s²\",\n    \"radius\": 24.622,\n    \"orbitalPeriod\": 60225,\n    \"moons\": true,\n    \"qtmoons\": 14,\n    \"temMedia\": -245,\n    \"temMinima\": -193,\n    \"temMaxima\": -327\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/neptune/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"neptune",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando informações do planeta netuno por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/neptune/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"neptune",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados do planeta neptune",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Neptune teste\",\n    \"distanceSun\": 4.498396441,\n    \"surfaceArea\": 7618000000,\n    \"gravity\": \"11,15 m/s²\",\n    \"radius\": 24.622,\n    \"orbitalPeriod\": 60225,\n    \"moons\": true,\n    \"qtmoons\": 14,\n    \"temMedia\": -245,\n    \"temMinima\": -193,\n    \"temMaxima\": -327\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/neptune/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"neptune",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando informações por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/neptune/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"neptune",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Neturn",
+			"item": [
+				{
+					"name": "Salvado dados do planeta Saturn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Saturn\",\n    \"distanceSun\": 1.429400000,\n    \"surfaceArea\": 42699999999.99999,\n    \"gravity\": \"10,44 m/s²\",\n    \"radius\": 58.232,\n    \"orbitalPeriod\": 29.458,\n    \"moons\": true,\n    \"qtmoons\": 82,\n    \"temMedia\": -139,\n    \"temMinima\": -125,\n    \"temMaxima\": -178\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/saturn/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"saturn",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados do planeta neturn",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/saturn/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"saturn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados do planeta naturn",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Saturn teste\",\n    \"distanceSun\": 1.429400000,\n    \"surfaceArea\": 42699999999.99999,\n    \"gravity\": \"10,44 m/s²\",\n    \"radius\": 58.232,\n    \"orbitalPeriod\": 29.458,\n    \"moons\": true,\n    \"qtmoons\": 82,\n    \"temMedia\": -139,\n    \"temMinima\": -125,\n    \"temMaxima\": -178\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/saturn/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"saturn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/saturn/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"saturn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mars",
+			"item": [
+				{
+					"name": "Salvando dados do planeta marte",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mars\",\n    \"distanceSun\": 227.943824,\n    \"surfaceArea\": 144.800000,\n    \"gravity\": \"3,721 m/s²\",\n    \"radius\": 3.3895,\n    \"orbitalPeriod\": 687,\n    \"moons\": true,\n    \"qtmoons\": 2,\n    \"temMedia\": -63,\n    \"temMinima\": -140,\n    \"temMaxima\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mars/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mars",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados do planeta marte por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados do planeta mars",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mars teste\",\n    \"distanceSun\": 227.943824,\n    \"surfaceArea\": 144.8,\n    \"gravity\": \"3,721 m/s²\",\n    \"radius\": 3.3895,\n    \"orbitalPeriod\": 687.0,\n    \"moons\": true,\n    \"qtmoons\": 2,\n    \"temMedia\": -63.0,\n    \"temMinima\": -140.0,\n    \"temMaxima\": 20.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados do planeta por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/mars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"mars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jupiter",
+			"item": [
+				{
+					"name": "Salvando dados de jupiter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jupiter\",\n    \"distanceSun\": 788.000000,\n    \"surfaceArea\": 61420000000000,\n    \"gravity\": \"24,79 m/s²\",\n    \"radius\": 69.911,\n    \"orbitalPeriod\": 365,\n    \"moons\": true,\n    \"qtmoons\": 79,\n    \"temMedia\": -110,\n    \"temMinima\": -163,\n    \"temMaxima\": -108\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/jupiter/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"jupiter",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados do planeta jupiter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/jupiter/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"jupiter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações do planeta jupiter",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Jupiter teste\",\n    \"distanceSun\": 788.000000,\n    \"surfaceArea\": 61420000000000,\n    \"gravity\": \"24,79 m/s²\",\n    \"radius\": 69.911,\n    \"orbitalPeriod\": 365,\n    \"moons\": true,\n    \"qtmoons\": 79,\n    \"temMedia\": -110,\n    \"temMinima\": -163,\n    \"temMaxima\": -108\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/jupiter/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"jupiter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletado dados por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/jupiter/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"jupiter",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Uranos",
+			"item": [
+				{
+					"name": "Salvando dados do planeta urano",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Urano\",\n    \"distanceSun\": 2.870658186,\n    \"surfaceArea\": 8083000000,\n    \"gravity\": \"8,87 m/s²\",\n    \"radius\": 25.362,\n    \"orbitalPeriod\": 30799.095,\n    \"moons\": true,\n    \"qtmoons\": 27,\n    \"temMedia\": -195,\n    \"temMinima\": -224,\n    \"temMaxima\": -216\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/uranos/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"uranos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados do planeta urano",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/uranos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"uranos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando informações por id do planeta urano",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Urano teste\",\n    \"distanceSun\": 2.870658186,\n    \"surfaceArea\": 8083000000,\n    \"gravity\": \"8,87 m/s²\",\n    \"radius\": 25.362,\n    \"orbitalPeriod\": 30799.095,\n    \"moons\": true,\n    \"qtmoons\": 27,\n    \"temMedia\": -195,\n    \"temMinima\": -224,\n    \"temMaxima\": -216\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/uranos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"uranos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/uranos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"uranos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Venus",
+			"item": [
+				{
+					"name": "Salvando dados do planeta venus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vênus\",\n    \"distanceSun\": 108.200000,\n    \"surfaceArea\": 496.800000,\n    \"gravity\": \"8,87 m/s²\",\n    \"radius\": 6.0518,\n    \"orbitalPeriod\": 225,\n    \"moons\": false,\n    \"qtmoons\": 0,\n    \"temMedia\": 461,\n    \"temMinima\": -220,\n    \"temMaxima\": 430\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/venus/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"venus",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados do planeta venus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/venus/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"venus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados por id do planeta venus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vênus teste\",\n    \"distanceSun\": 108.2,\n    \"surfaceArea\": 496.8,\n    \"gravity\": \"8,87 m/s²\",\n    \"radius\": 6.0518,\n    \"orbitalPeriod\": 225.0,\n    \"moons\": false,\n    \"qtmoons\": 0,\n    \"temMedia\": 461.0,\n    \"temMinima\": -220.0,\n    \"temMaxima\": 430.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/venus/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"venus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados por id do planeta venus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/venus/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"venus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Earth",
+			"item": [
+				{
+					"name": "Salvando dados do planeta terra",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Earth\",\n    \"distanceSun\":15.000000,\n    \"surfaceArea\":510.072000 ,\n    \"gravity\": \"9.80665 m/s2\",\n    \"radius\": 6.371,\n    \"orbitalPeriod\": 225,\n    \"moons\":true ,\n    \"qtmoons\": 1,\n    \"temMedia\":15 ,\n    \"temMinima\":-89.2,\n    \"temMaxima\":56.7 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/earth/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"earth",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listando dados por id do plaenta eath",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/earth/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"earth",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletando dados do plaenta terra",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/earth/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"earth",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizando dados do planeta terra",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Earth teste\",\n    \"distanceSun\":15.000000,\n    \"surfaceArea\":510.072000 ,\n    \"gravity\": \"9.80665 m/s2\",\n    \"radius\": 6.371,\n    \"orbitalPeriod\": 225,\n    \"moons\":true ,\n    \"qtmoons\": 1,\n    \"temMedia\":15 ,\n    \"temMinima\":-89.2,\n    \"temMaxima\":56.7 \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/earth/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"earth",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listagem do systema solar",
+			"item": [
+				{
+					"name": "Listagem Final de planetas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/planetary/planetal/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"planetary",
+								"planetal",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

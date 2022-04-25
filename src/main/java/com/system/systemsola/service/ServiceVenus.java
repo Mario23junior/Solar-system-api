@@ -1,5 +1,7 @@
 package com.system.systemsola.service;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,4 +43,15 @@ public class ServiceVenus {
 			throw new ReturnErroFindSearchNotFound("Planeta "+ systemFind.getName()+" Já esta cadastrada");
 		}
 	}
+	
+	
+	public ResponseEntity<VenusDTO> listId(Long id) {
+		Optional<Venus> idPla = repository.findById(id);
+		if(idPla.isPresent()) {
+			return ResponseEntity.ok(mapper.map(idPla.get(), VenusDTO.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+	
 }

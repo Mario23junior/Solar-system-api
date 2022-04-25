@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.system.systemsola.Exceptions.ReturnErroFindSearchNotFound;
-import com.system.systemsola.dto.SaturnDTO;
 import com.system.systemsola.dto.VenusDTO;
 import com.system.systemsola.model.Saturn;
 import com.system.systemsola.model.Venus;
@@ -23,12 +22,12 @@ public class ServiceVenus {
 		this.mapper = mapper;
 	}
 	
-	public ResponseEntity<SaturnDTO> saveBody(VenusDTO venusDto) {
+	public ResponseEntity<VenusDTO> saveBody(VenusDTO venusDto) {
 		ValidValueDuplicate(venusDto);
 		Venus body = bodySave(mapper.map(venusDto, Venus.class));
 		return ResponseEntity
 				  .status(HttpStatus.OK)
-				  .body(mapper.map(body, SaturnDTO.class));
+				  .body(mapper.map(body, VenusDTO.class));
 	}
 
 	private Venus bodySave(Venus venus) {

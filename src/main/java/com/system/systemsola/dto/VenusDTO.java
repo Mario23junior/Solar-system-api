@@ -1,5 +1,7 @@
 package com.system.systemsola.dto;
 
+import javax.persistence.ManyToOne;
+
 public class VenusDTO {
 
 	private String name;
@@ -14,9 +16,23 @@ public class VenusDTO {
 	private Double temMinima;
 	private Double temMaxima;
 
+	@ManyToOne
+	private SystemSolarDTO systemSolarDto;
+	
 	public VenusDTO() {
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	public SystemSolarDTO getSystemSolarDto() {
+		return systemSolarDto;
+	}
+
+
+	public void setSystemSolarDto(SystemSolarDTO systemSolarDto) {
+		this.systemSolarDto = systemSolarDto;
+	}
+
 
 	public String getName() {
 		return name;

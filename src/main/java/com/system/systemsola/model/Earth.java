@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Earth {
@@ -22,7 +23,18 @@ public class Earth {
 	private Double temMedia;
 	private Double temMinima;
 	private Double temMaxima;
-	
+
+	@ManyToOne
+	private SystemSolar systemSolar;
+
+	public SystemSolar getSystemSolar() {
+		return systemSolar;
+	}
+
+	public void setSystemSolar(SystemSolar systemSolar) {
+		this.systemSolar = systemSolar;
+	}
+
 	public Earth() {
 		// TODO Auto-generated constructor stub
 	}
@@ -122,6 +134,5 @@ public class Earth {
 	public void setTemMaxima(Double temMaxima) {
 		this.temMaxima = temMaxima;
 	}
-	
-	
+
 }

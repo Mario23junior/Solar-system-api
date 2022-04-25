@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Jupiter {
@@ -23,6 +24,19 @@ public class Jupiter {
 	private Double temMinima;
 	private Double temMaxima;
 	
+	@ManyToOne
+	private SystemSolar systemSolar;
+	
+	
+	
+	public SystemSolar getSystemSolar() {
+		return systemSolar;
+	}
+
+	public void setSystemSolar(SystemSolar systemSolar) {
+		this.systemSolar = systemSolar;
+	}
+
 	public Jupiter() {
 		// TODO Auto-generated constructor stub
 	}

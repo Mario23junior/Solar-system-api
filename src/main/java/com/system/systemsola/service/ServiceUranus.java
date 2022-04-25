@@ -1,5 +1,7 @@
 package com.system.systemsola.service;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,5 +45,13 @@ public class ServiceUranus {
 		}
 	}
 	
+	public ResponseEntity<UranosDTO> listId(Long id) {
+		Optional<Uranos> idPla = repository.findById(id);
+		if(idPla.isPresent()) {
+			return ResponseEntity.ok(mapper.map(idPla.get(), UranosDTO.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
 	
 }

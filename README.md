@@ -23,6 +23,8 @@ Algums parametros de ação são necessarios para a execução
 * [H2](https://www.h2database.com/html/main.html)
 * [Swagger](https://swagger.io/)
 * [openJDK](https://maven.apache.org/)
+* [Heroku](https://www.heroku.com/free)
+
  
 ### 🔧 Instalação 🛠️ 
 
@@ -37,14 +39,14 @@ java -jar target/systemsola-0.0.1-SNAPSHOT.jar
  
  ###  Documentação  
 ```
-http://localhost:8080/swagger-ui/index.html
+https://system-solar-planetary.herokuapp.com/swagger-ui/index.html
 ```
 
 
 ## Uso
 
 ```
-localhost:8080/api/v1/planetary/planetal/
+https://system-solar-planetary.herokuapp.com/api/v1/planetary/planetal/
 ```
 
 ## Resultado dos dados da API

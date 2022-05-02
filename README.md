@@ -37,7 +37,7 @@ java -jar target/systemsola-0.0.1-SNAPSHOT.jar
  
  ###  Documentação  
 ```
-http://localhost:8080/swagger-ui/index.html
+https://system-solar-planetary.herokuapp.com/swagger-ui/index.html
 ```
 
 

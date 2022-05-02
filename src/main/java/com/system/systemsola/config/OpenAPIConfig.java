@@ -18,6 +18,8 @@ public class OpenAPIConfig {
 	private final static String  DESCRIPTION = "API de gerenciamento e consulta do sistema solar";
 	private final static String  NAME_AUTHOR = "Mário Junior";
 	private final static String  VERSION = "1.0.0";
+	private final static String  LICENCA = "Apache 2.0";
+	private final static String  LINCENS_ADDRESS = "Apache 2.0";
 	private final static String  GITHUB = "https://github.com/Mario23junior";
 	private final static String  EMAIL_API = "mariojunior3251@gmail.com";
 	
@@ -29,7 +31,7 @@ public class OpenAPIConfig {
 	              .description(DESCRIPTION)
 	              .version(VERSION)
                   .contact(new Contact().email(EMAIL_API).name(NAME_AUTHOR))
- 	              .license(new License().name("Apache 2.0").url("http://springdoc.org")))
+ 	              .license(new License().name(LICENCA).url(LINCENS_ADDRESS)))
 	              .externalDocs(new ExternalDocumentation()
 	              .description(DESCRIPTION)
 	              .url(GITHUB));

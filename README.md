@@ -44,7 +44,7 @@ https://system-solar-planetary.herokuapp.com/swagger-ui/index.html
 ## Uso
 
 ```
-https://system-solar-planetary.herokuapp.com/swagger-ui/index.html
+https://system-solar-planetary.herokuapp.com/api/v1/planetary/planetal/
 ```
 
 ## Resultado dos dados da API

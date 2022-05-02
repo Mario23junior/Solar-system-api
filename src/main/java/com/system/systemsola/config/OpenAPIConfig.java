@@ -19,7 +19,7 @@ public class OpenAPIConfig {
 	private final static String  NAME_AUTHOR = "Mário Junior";
 	private final static String  VERSION = "1.0.0";
 	private final static String  LICENCA = "Apache 2.0";
-	private final static String  LINCENS_ADDRESS = "http://springdoc.org";
+	private final static String  LINCENS_ADDRESS = "https://www.apache.org/licenses/LICENSE-2.0";
 	private final static String  GITHUB = "https://github.com/Mario23junior";
 	private final static String  EMAIL_API = "mariojunior3251@gmail.com";
 	

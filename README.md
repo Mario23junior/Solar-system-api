@@ -23,7 +23,7 @@ Algums parametros de ação são necessarios para a execução
 * [H2](https://www.h2database.com/html/main.html)
 * [Swagger](https://swagger.io/)
 * [openJDK](https://maven.apache.org/)
-* [Heorku](https://www.heroku.com/free)
+* [Heroku](https://www.heroku.com/free)
 
  
 ### 🔧 Instalação 🛠️ 

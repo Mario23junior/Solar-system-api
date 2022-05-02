@@ -21,6 +21,7 @@ Algums parametros de ação são necessarios para a execução
 * [Java11](http://www.dropwizard.io/1.0.2/docs/)
 * [Spring boot](https://spring.io/projects/spring-boot)
 * [H2](https://www.h2database.com/html/main.html)
+* [Swagger](https://swagger.io/)
 * [openJDK](https://maven.apache.org/)
  
 ### 🔧 Instalação 🛠️ 
@@ -34,6 +35,12 @@ java -jar target/systemsola-0.0.1-SNAPSHOT.jar
 
 ```
  
+ ###  Documentação  
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+
 ## Uso
 
 ```
